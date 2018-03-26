@@ -14,7 +14,6 @@
   $daysArray = array('Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su');
 
   echo '<ul class="weekdays">';
-
   foreach($daysArray as $day) {
     echo '<li>' . $day . '</li>';
   }
@@ -25,7 +24,12 @@
 
   echo '<ul class="days">';
   for ($i=1; $i < (cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y")) + 1); $i++) {
-    echo '<li>' . $i . '</li>';
+    if($i == date("j")) {
+      echo '<li><span class="active"><mark>' . $i . '</mark></span></li>';
+    }
+    else {
+      echo '<li>' . $i . '</li>';
+    }
   }
   echo '</ul>';
 
