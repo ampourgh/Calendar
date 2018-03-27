@@ -16,10 +16,14 @@ function checkAll(ele) {
         }
     } else {
         for (var i = 0; i < checkboxes.length; i++) {
-            console.log(i)
-            if (checkboxes[i].type == 'checkbox') {
+          if((ele.id - 1) * 8 == i) {
+            let j = 0;
+            while (j !=8) {
                 checkboxes[i].checked = false;
+                i++;
+                j++;
             }
+          }
         }
     }
 }
