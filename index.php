@@ -55,6 +55,8 @@
             if($i == date("j")) {
               echo '<li><span class="active">'
               . $i. '</span>' . '<br>'
+              . '<th><INPUT type="checkbox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
+              . 'ALL' . '<br>'
               . '<input id="checkBox" type="checkbox">' . '<br>'
               . '<input id="checkBox" type="checkbox">' . '<br>'
               . '<input id="checkBox" type="checkbox">' . '<br>'
@@ -67,6 +69,8 @@
             else {
               echo '<li>'
                     . $i . '<br>'
+                    . '<th><INPUT type="checkbox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
+                    . 'ALL' . '<br>'
                     . '<input id="checkBox" type="checkbox">' . '<br>'
                     . '<input id="checkBox" type="checkbox">' . '<br>'
                     . '<input id="checkBox" type="checkbox">' . '<br>'
@@ -89,4 +93,5 @@
       }
     ?>
   </body>
-</body>
+<script src="js/script.js"></script>
+</html>
