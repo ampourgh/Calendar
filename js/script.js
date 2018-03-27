@@ -6,10 +6,17 @@ function checkAll(ele) {
         for (var i = 0; i < checkboxes.length; i++) {
           if((ele.id - 1) * 8 == i) {
             let j = 0;
+            var getTime = new Date();
+            var currentTime = getTime.getHours() + ":"
+                          + getTime.getMinutes() + ":"
+                          + getTime.getSeconds();
+
+            document.getElementById('time' + ele.id).innerHTML = currentTime;
+
             while (j !=8) {
-                checkboxes[i].checked = true;
-                i++;
-                j++;
+              checkboxes[i].checked = true;
+              i++;
+              j++;
             }
           }
 
