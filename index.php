@@ -3,7 +3,7 @@
   <head>
       <meta charset="utf-8">
       <title>Calendar</title>
-      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/styles.css?14117">
   </head>
   <body>
     <?php

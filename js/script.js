@@ -7,7 +7,7 @@ function checkAll(ele) {
           if((ele.id - 1) * 8 == i) {
             let j = 0;
             var getTime = new Date();
-            var currentTime = getTime.getHours() + ":"
+            var currentTime = Math.abs(getTime.getHours() - 12) + ":"
                           + getTime.getMinutes() + ":"
                           + getTime.getSeconds();
 
@@ -25,6 +25,9 @@ function checkAll(ele) {
         for (var i = 0; i < checkboxes.length; i++) {
           if((ele.id - 1) * 8 == i) {
             let j = 0;
+            if(j == 0) {
+              document.getElementById('time' + ele.id).innerHTML = "-";
+            }
             while (j !=8) {
                 checkboxes[i].checked = false;
                 i++;
