@@ -55,31 +55,31 @@
             if($i == date("j")) {
               echo '<li><span class="active">'
               . $i. '</span>' . '<br>'
-              . '<th><INPUT type="checkbox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
+              . '<th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
               . 'ALL'
               . '<p id="time' . $i . '">' . '-' . '</p>' . '<br>'
-              . '<input id="checkBox" type="checkbox">' . '<br>'
-              . '<input id="checkBox" type="checkbox">' . '<br>'
-              . '<input id="checkBox" type="checkbox">' . '<br>'
-              . '<input id="checkBox" type="checkbox">' . '<br>'
-              . '<input id="checkBox" type="checkbox">' . '<br>'
-              . '<input id="checkBox" type="checkbox">' . '<br>'
-              . '<input id="checkBox" type="checkbox">' . '<br>'
+              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
               . '</li>';
             }
             else {
               echo '<li>'
                     . $i . '<br>'
-                    . '<th><INPUT type="checkbox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
+                    . '<th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
                     . 'ALL'
                     . '<p id="time' . $i . '">' . '-' . '</p>' . '<br>'
-                    . '<input id="checkBox" type="checkbox">' . '<br>'
-                    . '<input id="checkBox" type="checkbox">' . '<br>'
-                    . '<input id="checkBox" type="checkbox">' . '<br>'
-                    . '<input id="checkBox" type="checkbox">' . '<br>'
-                    . '<input id="checkBox" type="checkbox">' . '<br>'
-                    . '<input id="checkBox" type="checkbox">' . '<br>'
-                    . '<input id="checkBox" type="checkbox">' . '<br>'
+                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="' . 30 . '" style="visibility: hidden;" name="other">' . '<br>'
+                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
                     .'</li>';
             }
           }
@@ -87,12 +87,6 @@
         echo '</ul>';
         echo '<input type="submit" value="Submit">';
       echo '</form>';
-
-      if(isset($_POST['click']))
-      {
-          $date_clicked = date('Y-m-d H:i:s');;
-          echo "Time the button was clicked: " . $date_clicked . "<br>";
-      }
     ?>
   </body>
 <script src="js/script.js"></script>
