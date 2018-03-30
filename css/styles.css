@@ -1,5 +1,56 @@
 ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
+body {font-family: Verdana, sans-serif; margin: 0; padding: 0;}
+
+/*
+NAVIGATION BAR
+*/
+
+.navbar {
+	background-color: #fff;
+  border-radius: 0;
+	position: -webkit-sticky;
+	position: sticky;
+	height: 0;
+	margin: 0 auto;
+	top: 0;
+	text-align: center;
+
+}
+
+.navbar a {
+	font-size: 20px;
+	font-family: 'Coda';
+	color: #fff;
+	text-decoration: none;
+}
+
+.navbar a:hover {
+	transition: .1s;
+	color: DarkRed;
+}
+
+.scrolled {
+ transition: 0.5s ease;
+}
+
+.scrolled.navbar {
+  height: 25px;
+  background-color: rgba(200, 0, 0, .5);
+  transition: 0.5s ease;
+	margin-right: 0;
+}
+
+.scrolled.navbar a {
+	color: #fff;
+}
+
+.scrolled.navbar a:hover {
+	color: DarkRed;
+	padding-bottom: 0;
+	border-bottom: 3px solid transparent;
+	border-image: linear-gradient(to right, tomato , DarkRed);
+	border-image-slice: 1;
+}
 
 /* Month header */
 .month {
@@ -68,6 +119,6 @@ body {font-family: Verdana, sans-serif;}
 /* Highlight the "current" day */
 .days li .active {
     padding: 5px;
-    background: #1abc9c;
+    background: tomato;
     color: white !important
 }

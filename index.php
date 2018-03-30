@@ -3,10 +3,18 @@
   <head>
       <meta charset="utf-8">
       <title>Calendar</title>
-      <link rel="stylesheet" href="css/styles.css?1413317">
+      <link rel="stylesheet" href="css/styles.css?14324244437">
   </head>
   <body>
     <?php
+
+      echo '<div class="navbar" id="navbar">'
+           . '<a href="#home">start date:</a>';
+
+      echo ' '
+           . '<a href="#home">end date:</a>'
+           . '</div>';
+
       /*
         CALENDAR APP
       */
@@ -93,5 +101,17 @@
 
     ?>
   </body>
+<script src="js/jquery-3.3.1.js"></script>
 <script src="js/script.js"></script>
+<script>
+  $(document).ready(function() {
+      $(window).on('scroll', function() {
+        if (Math.round($(window).scrollTop()) > 150) {
+          $('.navbar').addClass('scrolled');
+        } else {
+          $('.navbar').removeClass('scrolled');
+        }
+      });
+    });
+</script>
 </html>
