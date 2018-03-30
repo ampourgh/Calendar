@@ -3,7 +3,7 @@
   <head>
       <meta charset="utf-8">
       <title>Calendar</title>
-      <link rel="stylesheet" href="css/styles.css?14117">
+      <link rel="stylesheet" href="css/styles.css?1413317">
   </head>
   <body>
     <?php
@@ -41,9 +41,9 @@
       $firstDay = date('D', $timestamp);
 
       // Lists the days within the current month
-      echo '<form action="" method="POST">';
         echo '<ul class="days">';
         $j = 0;
+        $h = 10;
         for ($i=1; $i < (cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y")) + 1); $i++) {
           if($firstDay != $daysArray[$j]) {
             echo '<li></li>';
@@ -54,18 +54,20 @@
           else {
             if($i == date("j")) {
               echo '<li><span class="active">'
-              . $i. '</span>' . '<br>'
-              . '<th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
-              . 'ALL'
-              . '<p id="time' . $i . '">' . '-' . '</p>' . '<br>'
-              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-              . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-              . '</li>';
+                    . $i. '</span>' . '<br>'
+                    . '<th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
+                    . 'ALL'
+                    . '<p id="time' . $i . '">' . '-' . '</p>' . '<br>'
+                    . '<input id="' . ($h + '0') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #1" style="visibility: hidden;" class="textBox">' . '<br>'
+                    . '<input id="' . ($h + '1') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #2" style="visibility: hidden;" class="textBox">' . '<br>'
+                    . '<input id="' . ($h + '2') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #3" style="visibility: hidden;" class="textBox">' . '<br>'
+                    . '<input id="' . ($h + '3') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #4" style="visibility: hidden;" class="textBox">' . '<br>'
+                    . '<input id="' . ($h + '4') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #5" style="visibility: hidden;" class="textBox">' . '<br>'
+                    . '<input id="' . ($h + '5') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #6" style="visibility: hidden;" class="textBox">' . '<br>'
+                    . '<input id="' . ($h + '6') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #7" style="visibility: hidden;" class="textBox">' . '<br>'
+                    . '</li>';
+
+              $h = $h + 10;
             }
             else {
               echo '<li>'
@@ -73,20 +75,22 @@
                     . '<th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>'
                     . 'ALL'
                     . '<p id="time' . $i . '">' . '-' . '</p>' . '<br>'
-                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="' . 30 . '" style="visibility: hidden;" name="other">' . '<br>'
-                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
-                    . '<input id="checkBox" class="checkBox" type="checkbox">' . '<input type="text" id="otherValue" name="other">' . '<br>'
+                    . '<input id="' . ($h + '0') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #1" class="textBox" style="visibility: hidden;">' . '<br>'
+                    . '<input id="' . ($h + '1') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #2" class="textBox" style="visibility: hidden;">' . '<br>'
+                    . '<input id="' . ($h + '2') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #3" class="textBox" style="visibility: hidden;">' . '<br>'
+                    . '<input id="' . ($h + '3') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #4" class="textBox" style="visibility: hidden;">' . '<br>'
+                    . '<input id="' . ($h + '4') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #5" class="textBox" style="visibility: hidden;">' . '<br>'
+                    . '<input id="' . ($h + '5') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #6" class="textBox" style="visibility: hidden;">' . '<br>'
+                    . '<input id="' . ($h + '6') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox">' . '<input type="text" placeholder="Task #7" class="textBox" style="visibility: hidden;">' . '<br>'
                     .'</li>';
+              $h = $h + 10;
             }
           }
         }
         echo '</ul>';
-        echo '<input type="submit" value="Submit">';
-      echo '</form>';
+
+
+
     ?>
   </body>
 <script src="js/script.js"></script>

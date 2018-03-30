@@ -1,11 +1,28 @@
-// function singleCheck(ele) {
-//   if (ele.checked) {
-//     var otherText = document.getElementById(30);
-//     otherText.style.visibility = 'visible';
-//   }
-// }
-//
-// var checkboxes = document.getElementsByTagName'input');
+showTextBox = (ele) => {
+
+  console.log(ele.id)
+
+  var textBoxs = document.getElementsByClassName('textBox');
+  let h = 10;
+  let s = 0;
+  var location = null;
+  while(location != 316) {
+    for (i = 0; i < 7; i++) {
+      location = i + h;
+      console.log(location);
+      if(location == ele.id) {
+        if (ele.checked) {
+          textBoxs[s].style.visibility = 'visible';
+        } else {
+          textBoxs[s].style.visibility = 'hidden';
+        }
+      }
+      s++;
+    }
+    h += 10;
+  }
+}
+
 checkTheBoxes = (eleId, i, checkboxes) => {
   var getTime = new Date();
   var currentTime = Math.abs(getTime.getHours() - 12) + ":"
