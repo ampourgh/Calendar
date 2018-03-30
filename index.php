@@ -9,11 +9,24 @@
     <?php
 
       echo '<div class="navbar" id="navbar">'
-           . '<a href="#home">start date:</a>';
+           . '<a href="#home">start date:</a>'
+           . '<select>';
 
-      echo ' '
+      for ($options=1; $options < (cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y")) + 1); $options++) {
+        echo '<option value="' . $options . '">' . date("F") . '/' . $options . '/' . date("Y") . '</option>';
+      }
+
+      echo '</select>'
+           . ' - '
            . '<a href="#home">end date:</a>'
-           . '</div>';
+           . '<select>';
+
+     for ($options=1; $options < (cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y")) + 1); $options++) {
+       echo '<option value="' . $options . '">' . date("F") . '/' . $options . '/' . date("Y") . '</option>';
+     }
+
+     echo '</select>'
+          . '</div>';
 
       /*
         CALENDAR APP
