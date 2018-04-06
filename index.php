@@ -32,17 +32,33 @@
         CALENDAR APP
       */
 
+      date_default_timezone_set('America/Chicago');
+
+      function timeExplain($hour, $meridiem) {
+        if($meridiem == 'AM') {
+          return 'Good morning!';
+        }
+        else {
+          if($hour < '4') {
+            return 'good afternoon';
+          }
+          else {
+            return 'good evening';
+          }
+        }
+      }
+      $goodDay = timeExplain(date('h'), date('A'));
+
       // Day of the week and day of the month
       // Month and year
-
       echo '<div class="month">'
         . '<ul>'
         . '<li class="prev">&#10094;</li>'
         .  '<li class="next">&#10095;</li>'
-        .  '<li>' . date("F Y")
+        .  '<li>' . $goodDay . ', ' . 'Amir!'
         .  '<br>'
         .  '<span style="font-size:18px">'
-        . date("l jS ") . "<br>" . '</span></li>'
+        . date("l F jS Y") . "<br>" . '</span></li>'
         . '</ul>'
         . '</div>';
 
