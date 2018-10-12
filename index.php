@@ -71,14 +71,15 @@
       foreach($daysArray as $day) {
         echo '<li>' . $day . '</li>';
       }
-
       echo '</ul>';
+
+      echo '<form action="./index.php">';
 
       $timestamp = strtotime(date('Y-m-01'));
 
       $firstDay = date('D', $timestamp);
 
-      // Lists the days within the current month
+        // Lists the days within the current month
         echo '<ul class="days">';
         $j = 0;
         $h = 10;
@@ -133,7 +134,11 @@
           }
         }
 
-        echo '</ul>';
+        echo '</ul>
+          <div style="text-align: center" class="navbar">
+            <input type="submit" value="Submit">
+          </div>
+        </form>';
 
 
 
