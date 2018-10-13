@@ -116,13 +116,31 @@ NAVIGATION BAR
 		border-left: 1px solid #ccc;
 }
 
-/* Highlight the "current" day */
+.active {
+	color: #fff;
+	background: tomato;
+	padding: 10px;
+	border-radius: 0;
+	border-right: 1px solid #000;
+}
+
+.not-active {
+	color: #fff;
+	background: #ccc;
+	padding: 10px;
+	border-radius: 0;
+	border-right: 1px solid #000;
+}
+
+/* Highlight the "current" day
 .days li .active {
-    padding: 5px;
+    padding: 3px 3px;
     background: tomato;
     color: white !important;
 		border-left: 1px solid #ccc;
+		border-radius: 100px;
 }
+*/
 
 .day-border {
 	border-right: 1px solid #ccc;
