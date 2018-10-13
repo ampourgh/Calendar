@@ -92,7 +92,14 @@
           }
           else {
             if($i == date("j")) {
-              echo '<li><span class="active">'
+              echo '<li ';
+
+              if ($i == (cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y")) + 1)
+                  || $i % 7 == 0) {
+                echo 'class="day-border"';
+              }
+
+              echo '><span class="active">'
                     . $i . '</span><br>
                     <th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>
                     ALL
@@ -112,7 +119,14 @@
 
               $h = $h + 10;
             } else {
-              echo '<li>'
+             echo '<li ';
+
+              if ($i == (cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y")))
+                  || $i % 7 == 0) {
+                echo 'class="day-border"';
+              }
+
+              echo '>'
                     . $i . '<br>
                     <th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>
                     ALL
