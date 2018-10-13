@@ -6,7 +6,23 @@
       <link rel="stylesheet" href="css/styles.css?14324244437">
   </head>
   <body>
+
     <?php
+
+      if (isset($_POST['SAVE'])) {
+          echo '<div class="modal-wrapper">
+                  <div class="modal">
+                    <div class="head">
+                      <a class="btn-close trigger" href="javascript:;"></a>
+                    </div>
+                    <div class="content">
+                      <p style="padding-left: 12%;">Your posts on the Calendar has been submitted!</p>
+                    </div>
+                  </div>
+                </div>';
+      }
+
+
 
       echo '<div class="navbar" id="navbar">
             <a href="#home">start date:</a>
@@ -149,8 +165,8 @@
         }
 
         echo '</ul>
-          <div style="text-align: center" class="navbar">
-            <input type="submit" value="Submit">
+          <div class="page-wrapper">
+            <input type="submit" value="SAVE" class="btn trigger">
           </div>
         </form>';
 
@@ -158,17 +174,8 @@
 
     ?>
   </body>
-<script src="js/jquery-3.3.1.js"></script>
-<script src="js/script.js"></script>
-<script>
-  $(document).ready(function() {
-      $(window).on('scroll', function() {
-        if (Math.round($(window).scrollTop()) > 150) {
-          $('.navbar').addClass('scrolled');
-        } else {
-          $('.navbar').removeClass('scrolled');
-        }
-      });
-    });
-</script>
+<script src="./js/jquery-3.3.1.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/navbar-scroll.js"></script>
+<script src="./js/modal.js"></script>
 </html>
