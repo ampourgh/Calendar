@@ -73,7 +73,7 @@
                 <li class="next">&#10095;</li>
                 <li>' . $goodDay . ', Emerson!
                 <br>
-                <span style="font-size:18px">'
+                <span style="font-size:18px; background: rgba(217, 67, 86, 1);">'
                 . date("l F jS Y") . '<br></span>
                 </li>
              </ul>
@@ -83,7 +83,7 @@
 
       $daysArray = array('Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun');
 
-      echo '<ul class="weekdays">';
+      echo '<ul class="weekdays" style="margin: 0 4%;">';
       foreach($daysArray as $day) {
         echo '<li>' . $day . '</li>';
       }
@@ -96,7 +96,7 @@
       $firstDay = date('D', $timestamp);
 
         // Lists the days within the current month
-        echo '<ul class="days">';
+        echo '<ul class="days" style="text-align: center;">';
         $j = 0;
         $h = 10;
         for ($i=1; $i < (cal_days_in_month(CAL_GREGORIAN, date("m"), date("Y")) + 1); $i++) {
@@ -115,25 +115,25 @@
               echo 'class="day-border"';
             }
 
-            echo '><div class="';
+            echo ' style="text-align: left;"><div class="';
 
             if($i == date("j")) {
-                echo 'active">';
+                echo 'active" style="margin-left: 10px;">';
             } else {
-                echo 'not-active">';
+                echo 'not-active" style="margin-left: 10px;">';
             }
 
             echo $i . '</div><br><br>'
-                  . '<th><INPUT type="checkbox" class="checkBox" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>
-                  ALL
-                  <p id="time' . $i . '"> - </p><br><hr>
-                  <input id="' . ($h + '0') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #1" style="visibility: hidden;" class="textBox"><br><hr>
-                  <input id="' . ($h + '1') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #2" style="visibility: hidden;" class="textBox"><br><hr>
-                  <input id="' . ($h + '2') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #3" style="visibility: hidden;" class="textBox"><br><hr>
-                  <input id="' . ($h + '3') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #4" style="visibility: hidden;" class="textBox"><br><hr>
-                  <input id="' . ($h + '4') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #5" style="visibility: hidden;" class="textBox"><br><hr>
-                  <input id="' . ($h + '5') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #6" style="visibility: hidden;" class="textBox"><br><hr>
-                  <input id="' . ($h + '6') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #7" style="visibility: hidden;" class="textBox"><br><hr>
+                  . '<div class="not-center"><th><INPUT type="checkbox" class="checkBox not-center" id="' . $i . '" onchange="checkAll(this)" name="chk[]" /> </th>
+                  <b>ALL</b>
+                  <p id="time' . $i . '"> - </p></div><br>
+                  <div style="margin-left: 10px;background: #dedfe0;"><input id="' . ($h + '0') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #1" style="visibility: hidden;" class="textBox"><br></div>
+                  <div style="margin-left: 10px;"><input id="' . ($h + '1') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #2" style="visibility: hidden;" class="textBox"><br></div>
+                  <div style="margin-left: 10px;background: #dedfe0;"><input id="' . ($h + '2') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #3" style="visibility: hidden;" class="textBox"><br></div>
+                  <div style="margin-left: 10px;"><input id="' . ($h + '3') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #4" style="visibility: hidden;" class="textBox"><br></div>
+                  <div style="margin-left: 10px;background: #dedfe0;"><input id="' . ($h + '4') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #5" style="visibility: hidden;" class="textBox"><br></div>
+                  <div style="margin-left: 10px;"><input id="' . ($h + '5') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #6" style="visibility: hidden;" class="textBox"><br></div>
+                  <div style="margin-left: 10px;background: #dedfe0;"><input id="' . ($h + '6') . '" onchange="showTextBox(this)" class="checkBox" type="checkbox"><input type="text" placeholder="Task #7" style="visibility: hidden;" class="textBox"><br></div>
                   </li>';
 
               if ($i % 7 == 0) {
