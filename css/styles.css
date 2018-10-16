@@ -1,5 +1,5 @@
 * {
-	background: #eee;
+
 }
 
 ul {
@@ -10,6 +10,7 @@ body {
 	font-family: Verdana, sans-serif;
 	margin: 0;
 	padding: 0;
+	background: #eee;
 }
 
 /*
@@ -65,9 +66,9 @@ NAVIGATION BAR
 
 /* Month header */
 .month {
-    padding: 70px 0;
+    padding: 150px 0;
     width: 100%;
-    background: rgba(217, 67, 86, 1);
+    background-image: url("../img/nature.jpg");
     text-align: center;
 }
 
@@ -79,7 +80,6 @@ NAVIGATION BAR
 
 .month ul li {
     color: white;
-		background: rgba(217, 67, 86, 1);
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -109,6 +109,7 @@ NAVIGATION BAR
     width: 13.6%;
     color: #666;
     text-align: center;
+		background-color:#ddd;
 }
 
 /* Days (1-31) */
@@ -137,6 +138,7 @@ NAVIGATION BAR
 .active {
 	color: #fff;
 	background: tomato;
+	background: linear-gradient(to right, rgba(260, 0, 0, .55), rgba(260, 0, 0, .45) 90%);
 	padding: 10px;
 	border-radius: 0;
 	border-right: 1px solid #000;
@@ -145,6 +147,7 @@ NAVIGATION BAR
 .not-active {
 	color: #fff;
 	background: #ccc;
+	background: linear-gradient(to right, rgba(0, 0, 0, .35), rgba(0, 0, 0, .25) 90%);
 	padding: 10px;
 	border-radius: 0;
 	border-right: 1px solid #000;
